@@ -249,6 +249,33 @@ export const PRIMARY_CHINESE_GRADE4_UP: KnowledgePoint[] = [
 
 然后在 `index.ts` 里挂进去，再重启 API 即可。
 
+## 🧰 Clone 之后做什么？
+
+仓库**故意不包含**三样运行时 / 工具产物（都在 `.gitignore` 里），clone 之后需要再补一遍：
+
+```bash
+git clone https://github.com/konglcxfs/xuexi.git
+cd xuexi
+
+# 1) 装依赖（pnpm workspace，会拉所有 apps/* + packages/*）
+pnpm install
+
+# 2) 装 AI 工具栈：Comet（项目管理）+ 29 个 IDE skills + CodeGraph
+#    这一步会在 ~/.cursor / ~/.claude / ~/.codex 等位置写 MCP 配置
+comet init --yes --scope project
+codegraph init
+```
+
+| 被排除的东西 | 为什么 | 恢复命令 |
+|---|---|---|
+| `node_modules/` (~ 418 MB) | 不同平台不同 lockfile | `pnpm install` |
+| `.codegraph/` (8.3 MB SQLite 索引) | 每台机器的工作区路径不同，索引会失效 | `codegraph init` |
+| 29 个平台 skills（`.claude/ .cursor/ .codex/ .opencode/ .windsurf/ ...`） | 每个协作者用的 IDE 不一样，且这些目录会持续被 IDE 改写 | `comet init --yes` |
+| `apps/desktop/release/` (776 MB Electron bundle) | 打包产物、可重新生成 | `pnpm --filter @xuexi/desktop run build` |
+| `apps/api/data/*.sqlite*` | 运行时数据库（含个人 / 测试数据） | `pnpm --filter @xuexi/api run db:migrate` |
+
+> **一句话总结**：`pnpm install` + `comet init --yes` + `codegraph init` —— 三步到位。
+
 ## 🪪 License
 
 MIT
