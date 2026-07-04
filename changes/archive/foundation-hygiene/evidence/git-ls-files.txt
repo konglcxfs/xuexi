@@ -1,0 +1,33 @@
+# evidence / git-ls-files.txt — foundation-hygiene
+# Captured at archive time, 2026-07-04
+# Command: git ls-files | grep -E '^(docs/|changes/archive/foundation-hygiene/|\.bamboo/)'
+# Total files in this snapshot: 17 (15 new + 2 modified)
+#
+
+# === changes/archive/foundation-hygiene/ ===
+changes/archive/foundation-hygiene/decisions.md
+changes/archive/foundation-hygiene/design.md
+changes/archive/foundation-hygiene/evidence/git-ls-files.txt
+changes/archive/foundation-hygiene/evidence/tests.md
+changes/archive/foundation-hygiene/manifest.yaml
+changes/archive/foundation-hygiene/output-map.yaml
+changes/archive/foundation-hygiene/proposal.md
+changes/archive/foundation-hygiene/tasks.md
+
+# === docs/ ===
+docs/architecture/README.md
+docs/decisions/0001-first-change.md
+docs/decisions/README.md
+docs/domain/README.md
+docs/foundation/README.md
+docs/operations/README.md
+docs/workflows/README.md
+
+# === .bamboo/ (modified in this commit) ===
+.bamboo/active.yaml
+.bamboo/boards/delivery.yaml
+.bamboo/boards/foundation.yaml
+.bamboo/boards/release.yaml
+.bamboo/config.yaml
+.bamboo/index.yaml
+.bamboo/project.yaml

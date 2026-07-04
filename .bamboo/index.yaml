@@ -1,4 +1,26 @@
 schema_version: 1
-generated_at: null
-changes: []
+generated_at: 2026-07-04
+changes:
+  - id: foundation-hygiene
+    kind: foundation
+    board: foundation
+    workflow: full
+    status: archive
+    title: "Foundation hygiene: populate docs/ and stand up the first archived change"
+    owner: konglcxfs
+    created_at: 2026-07-04
+    updated_at: 2026-07-04
+    canonical_outputs:
+      - changes/archive/foundation-hygiene/manifest.yaml
+      - changes/archive/foundation-hygiene/proposal.md
+      - changes/archive/foundation-hygiene/design.md
+      - changes/archive/foundation-hygiene/tasks.md
+      - changes/archive/foundation-hygiene/decisions.md
+      - changes/archive/foundation-hygiene/output-map.yaml
+    evidence:
+      dir: changes/archive/foundation-hygiene/evidence
+      attestation: changes/archive/foundation-hygiene/evidence/tests.md
+      snapshot: changes/archive/foundation-hygiene/evidence/git-ls-files.txt
+    depends_on: []
+    blocks: []
 runs: []

@@ -1,0 +1,80 @@
+schema_version: 1
+change_id: foundation-hygiene
+spec_version: 1
+
+# 每个输出文件 -> 文件路径、用途、推荐阅读顺序、负责人。
+# 评审者用这张表最快地在 diff 里跳转。
+
+files:
+  - output: manifest.yaml
+    path: changes/archive/foundation-hygiene/manifest.yaml
+    kind: identity
+    purpose: "Bamboo 身份卡：id、kind、board、workflow、status"
+    read_first: true
+    owner: konglcxfs
+  - output: proposal.md
+    path: changes/archive/foundation-hygiene/proposal.md
+    kind: pitch
+    purpose: "为什么做这次 change（人类语言）"
+    read_after: [manifest.yaml]
+    owner: konglcxfs
+  - output: design.md
+    path: changes/archive/foundation-hygiene/design.md
+    kind: layout
+    purpose: "布局决定：哪些进 git、哪些本地、为什么 archive 进 git"
+    read_after: [proposal.md]
+    owner: konglcxfs
+  - output: tasks.md
+    path: changes/archive/foundation-hygiene/tasks.md
+    kind: checklist
+    purpose: "作者本人的分步任务日志（状态、负责人、交付物、验收）"
+    read_after: [manifest.yaml]
+    owner: konglcxfs
+  - output: decisions.md
+    path: changes/archive/foundation-hygiene/decisions.md
+    kind: adr
+    purpose: "4 份编号 ADR，解释被采纳的选择"
+    read_after: [proposal.md, design.md]
+    owner: konglcxfs
+  - output: evidence/git-ls-files.txt
+    path: changes/archive/foundation-hygiene/evidence/git-ls-files.txt
+    kind: snapshot
+    purpose: "git ls-files 输出，证明全部 7 份 change 工件已被追踪"
+    read_after: [manifest.yaml]
+    owner: konglcxfs
+  - output: evidence/tests.md
+    path: changes/archive/foundation-hygiene/evidence/tests.md
+    kind: attestation
+    purpose: "自证：N/A —— 仅文档类 change；ADR 替代测试"
+    read_after: [decisions.md]
+    owner: konglcxfs
+
+# 同伴输出（在 changes/<id>/ 之外，也属于本次 change）：
+companion_outputs:
+  - path: docs/foundation/README.md
+    purpose: "声明 docs/foundation/ 里放什么"
+  - path: docs/architecture/README.md
+    purpose: "声明 docs/architecture/ 里放什么"
+  - path: docs/workflows/README.md
+    purpose: "声明 docs/workflows/ 里放什么"
+  - path: docs/decisions/README.md
+    purpose: "声明 docs/decisions/ 里放什么 + 维护规则"
+  - path: docs/decisions/0001-first-change.md
+    purpose: "ADR-0001（在 changes/decisions.md 里也有一份完整版）"
+  - path: docs/domain/README.md
+    purpose: "声明 docs/domain/ 里放什么"
+  - path: docs/operations/README.md
+    purpose: "声明 docs/operations/ 里放什么"
+
+# Bamboo 状态更新：
+bamboo_updates:
+  - path: .bamboo/boards/foundation.yaml
+    delta: "在 changes: 列表下追加 foundation-hygiene 行"
+  - path: .bamboo/index.yaml
+    delta: "在 changes: 列表下追加 foundation-hygiene 行；刷新 generated_at"
+
+# 本次 change 合计：14 个文件
+total_files: 14
+
+# 预估新增代码行（粗略）：约 600 行（几乎都是 Markdown）
+approx_loc_added: 600

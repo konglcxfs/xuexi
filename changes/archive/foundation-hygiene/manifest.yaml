@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "id": "foundation-hygiene",
+  "kind": "foundation",
+  "board": "foundation",
+  "workflow": "full",
+  "title": "基础工程清扫：补齐 docs/ 内容并建立第一个归档 change",
+  "owner": "konglcxfs",
+  "status": "archive",
+  "created_at": "2026-07-04",
+  "updated_at": "2026-07-04",
+  "target": {
+    "components": ["api", "desktop", "web", "ai-adapter", "knowledge-base", "learning-engine", "shared"],
+    "paths": [
+      "docs/**",
+      "changes/archive/foundation-hygiene/**",
+      ".bamboo/boards/foundation.yaml",
+      ".bamboo/index.yaml"
+    ]
+  },
+  "canonical_outputs": [
+    "changes/archive/foundation-hygiene/manifest.yaml",
+    "changes/archive/foundation-hygiene/proposal.md",
+    "changes/archive/foundation-hygiene/design.md",
+    "changes/archive/foundation-hygiene/tasks.md",
+    "changes/archive/foundation-hygiene/decisions.md",
+    "changes/archive/foundation-hygiene/output-map.yaml"
+  ],
+  "evidence_dir": "changes/archive/foundation-hygiene/evidence",
+  "evidence_required": true,
+  "phase": "archive"
+}

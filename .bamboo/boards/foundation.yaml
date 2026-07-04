@@ -9,7 +9,19 @@ columns: [open, design, build, verify, archive]
 display:
   group_by: phase
   show: [workflow, target, updated_at, canonical_outputs]
-updated_at: null
-changes: []
+updated_at: 2026-07-04
+changes:
+  - id: foundation-hygiene
+    phase: archive
+    workflow: full
+    target: [api, desktop, web, ai-adapter, knowledge-base, learning-engine, shared]
+    updated_at: 2026-07-04
+    canonical_outputs:
+      - changes/archive/foundation-hygiene/manifest.yaml
+      - changes/archive/foundation-hygiene/proposal.md
+      - changes/archive/foundation-hygiene/design.md
+      - changes/archive/foundation-hygiene/tasks.md
+      - changes/archive/foundation-hygiene/decisions.md
+      - changes/archive/foundation-hygiene/output-map.yaml
 counts:
-  total: 0
+  total: 1
