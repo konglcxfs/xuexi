@@ -1,0 +1,89 @@
+{
+  "name": "@xuexi/desktop",
+  "version": "0.1.0",
+  "private": true,
+  "description": "xuexi 桌面端 —— 把统一学习引擎装进 Electron，支持 macOS / Windows / Linux",
+  "main": "dist/main.js",
+  "scripts": {
+    "dev": "pnpm run build:main && tsc -w -p tsconfig.json & tsx watch src/main.ts",
+    "build:main": "tsc -p tsconfig.json",
+    "build:web": "pnpm --filter @xuexi/web build",
+    "bundle:api": "pnpm --filter @xuexi/api build",
+    "build": "pnpm run bundle:api && pnpm run build:web && pnpm run build:main && electron-builder",
+    "build:dir": "pnpm run bundle:api && pnpm run build:web && pnpm run build:main && electron-builder --dir",
+    "build:debug": "pnpm run bundle:api && pnpm run build:web && pnpm run build:main",
+    "start:prod": "electron dist/main.js",
+    "lint": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@xuexi/learning-engine": "workspace:*",
+    "@xuexi/shared": "workspace:*",
+    "electron-updater": "^6.6.2",
+    "pdf-parse": "^2.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.0",
+    "electron": "^30.0.0",
+    "electron-builder": "^24.13.3",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  },
+  "build": {
+    "$schema": "https://raw.githubusercontent.com/electron-userland/electron-builder/master/packages/app-builder-lib/scheme.json",
+    "appId": "com.xuexi.app",
+    "productName": "xuexi",
+    "directories": {
+      "output": "release",
+      "buildResources": "resources"
+    },
+    "files": [
+      "dist/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "../web/dist",
+        "to": "web"
+      }
+    ],
+    "mac": {
+      "target": [
+        {
+          "target": "dmg",
+          "arch": ["x64", "arm64"]
+        }
+      ],
+      "category": "public.app-category.education",
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64", "arm64"]
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        {
+          "target": "AppImage",
+          "arch": ["x64", "arm64"]
+        },
+        {
+          "target": "deb",
+          "arch": ["x64", "arm64"]
+        }
+      ],
+      "category": "Education"
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "xuexi",
+        "repo": "xuexi"
+      }
+    ]
+  }
+}

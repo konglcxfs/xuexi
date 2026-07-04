@@ -1,0 +1,18 @@
+export * from './knowledge-graph'
+export * from './mastery-engine'
+export * from './weakness-diagnostics'
+export * from './plan-generator'
+export * from './knowledge-linker'
+export * from './curriculum-goal-resolver'
+export * from './daily-plan-engine'
+
+// 8 大体系扩展
+export * from './subject-registry'
+export * from './method-registry'
+export * from './pedagogy-registry'
+export * from './source-registry'
+export * from './profile-engine'
+export * from './mastery-forest'
+export * from './adapters/local-fs-file'
+export * from './adapters/primary-math-g4'
+export * from './adapters/primary-math-g4-bank'

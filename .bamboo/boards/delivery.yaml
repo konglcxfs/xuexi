@@ -1,0 +1,15 @@
+schema_version: 1
+id: delivery
+title: Delivery Board
+change_types: [code]
+filters:
+  boards: [delivery]
+  change_types: [code]
+columns: [open, design, build, verify, archive]
+display:
+  group_by: phase
+  show: [workflow, target, updated_at, canonical_outputs]
+updated_at: null
+changes: []
+counts:
+  total: 0

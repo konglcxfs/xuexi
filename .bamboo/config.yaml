@@ -1,0 +1,16 @@
+schema_version: 1
+
+defaults:
+  board: delivery
+  workflow: full
+  auto_transition: true
+  review_mode: off
+  context_compression: off
+
+archive:
+  require_manifest: true
+  require_output_map: true
+  require_evidence: true
+
+knowledge_graph:
+  mode: project

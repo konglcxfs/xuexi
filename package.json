@@ -1,0 +1,25 @@
+{
+  "name": "xuexi",
+  "version": "0.1.0",
+  "private": true,
+  "description": "统一学习引擎 - 小学生 & 软考考生 AI 学习平台",
+  "scripts": {
+    "dev": "pnpm -r --parallel run dev",
+    "build": "pnpm -r run build",
+    "lint": "pnpm -r run lint",
+    "test": "pnpm -r run test",
+    "db:up": "docker compose up -d postgres",
+    "db:down": "docker compose down",
+    "db:migrate": "pnpm --filter @xuexi/api run db:migrate",
+    "db:seed": "pnpm --filter @xuexi/api run db:seed",
+    "start": "pnpm --filter @xuexi/api run start"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@10.6.5",
+  "devDependencies": {
+    "@types/ws": "^8.5.13",
+    "ws": "^8.18.0"
+  }
+}

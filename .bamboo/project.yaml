@@ -1,0 +1,109 @@
+schema_version: 1
+
+project:
+  id: xuexi
+  name: xuexi
+  kind: project-set
+  root: .
+  initialized_at: 2026-07-04
+
+structure:
+  control_plane: .bamboo
+  changes:
+    root: changes
+    active: changes/active
+    archive: changes/archive
+  docs:
+    root: docs
+    foundation: docs/foundation
+    architecture: docs/architecture
+    workflows: docs/workflows
+    decisions: docs/decisions
+    domain: docs/domain
+    operations: docs/operations
+
+components:
+  - id: api
+    type: application
+    path: apps/api
+    language: typescript
+    package_manager: pnpm
+    graph_index: strong
+  - id: desktop
+    type: application
+    path: apps/desktop
+    language: typescript
+    package_manager: pnpm
+    graph_index: strong
+  - id: web
+    type: application
+    path: apps/web
+    language: typescript
+    package_manager: pnpm
+    graph_index: strong
+  - id: ai-adapter
+    type: package
+    path: packages/ai-adapter
+    language: typescript
+    package_manager: pnpm
+    graph_index: strong
+  - id: knowledge-base
+    type: package
+    path: packages/knowledge-base
+    language: typescript
+    package_manager: pnpm
+    graph_index: strong
+  - id: learning-engine
+    type: package
+    path: packages/learning-engine
+    language: typescript
+    package_manager: pnpm
+    graph_index: strong
+  - id: shared
+    type: package
+    path: packages/shared
+    language: typescript
+    package_manager: pnpm
+    graph_index: strong
+
+workflows:
+  default_board: delivery
+  default_workflow: full
+  boards:
+    foundation:
+      change_types: [foundation]
+    delivery:
+      change_types: [code]
+    release:
+      change_types: [release]
+
+knowledge_graph:
+  include:
+    - docs/**
+    - services/*/src/**
+    - services/*/docs/**
+    - apps/*/src/**
+    - packages/*/src/**
+    - infra/**
+    - changes/active/*/proposal.md
+    - changes/active/*/design.md
+    - changes/active/*/tasks.md
+    - changes/active/*/decisions.md
+    - changes/active/*/output-map.yaml
+    - .bamboo/index.yaml
+    - .bamboo/boards/*.yaml
+  exclude:
+    - node_modules/**
+    - dist/**
+    - build/**
+    - coverage/**
+    - logs/**
+    - changes/**/artifacts/**
+    - changes/**/evidence/tests.md
+
+policies:
+  canonical_docs_required: true
+  change_requires_manifest: true
+  change_requires_output_map: true
+  decision_required_before_build: true
+  evidence_required_before_archive: true

@@ -1,0 +1,15 @@
+schema_version: 1
+id: release
+title: Release Board
+change_types: [release]
+filters:
+  boards: [release]
+  change_types: [release]
+columns: [open, design, build, verify, archive]
+display:
+  group_by: phase
+  show: [workflow, target, updated_at, canonical_outputs]
+updated_at: null
+changes: []
+counts:
+  total: 0
