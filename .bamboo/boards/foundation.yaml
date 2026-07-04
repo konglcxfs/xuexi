@@ -9,7 +9,7 @@ columns: [open, design, build, verify, archive]
 display:
   group_by: phase
   show: [workflow, target, updated_at, canonical_outputs]
-updated_at: 2026-07-04
+updated_at: 2026-07-05
 changes:
   - id: foundation-hygiene
     phase: archive
@@ -23,5 +23,19 @@ changes:
       - changes/archive/foundation-hygiene/tasks.md
       - changes/archive/foundation-hygiene/decisions.md
       - changes/archive/foundation-hygiene/output-map.yaml
+  - id: foundation-v2-docs-deepen
+    phase: verify
+    workflow: full
+    target: [api, desktop, web, ai-adapter, knowledge-base, learning-engine, shared]
+    updated_at: 2026-07-05
+    parent: foundation-hygiene
+    depends_on: [foundation-hygiene]
+    canonical_outputs:
+      - changes/active/foundation-v2-docs-deepen/manifest.yaml
+      - changes/active/foundation-v2-docs-deepen/proposal.md
+      - changes/active/foundation-v2-docs-deepen/design.md
+      - changes/active/foundation-v2-docs-deepen/tasks.md
+      - changes/active/foundation-v2-docs-deepen/decisions.md
+      - changes/active/foundation-v2-docs-deepen/output-map.yaml
 counts:
-  total: 1
+  total: 2

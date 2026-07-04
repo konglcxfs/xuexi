@@ -1,0 +1,11 @@
+# evidence / git-ls-files.txt — foundation-v2-docs-deepen
+#
+# 在归档时刻抓取，2026-07-05
+# 命令：
+#   git ls-files | grep -E '^(docs/foundation/|changes/archive/foundation-v2-docs-deepen/|\.bamboo/)'
+#
+# 本文件在 commit 前是占位。
+# commit 完成后请用下面的命令重新生成：
+#   git ls-files | grep -E '^(docs/foundation/|changes/archive/foundation-v2-docs-deepen/|\.bamboo/)' > changes/archive/foundation-v2-docs-deepen/evidence/git-ls-files.txt
+#
+# 期望的总行数（含注释）：~25

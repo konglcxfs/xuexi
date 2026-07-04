@@ -1,0 +1,84 @@
+schema_version: 1
+change_id: foundation-v2-docs-deepen
+spec_version: 1
+parent: foundation-hygiene
+
+# 本 change 的全部文件 → 路径 / 用途 / 顺序 / 负责人
+
+files:
+  - output: manifest.yaml
+    path: changes/active/foundation-v2-docs-deepen/manifest.yaml
+    kind: identity
+    purpose: "Bamboo 身份卡：id=foundation-v2-docs-deepen, parent=foundation-hygiene"
+    read_first: true
+    owner: konglcxfs
+  - output: proposal.md
+    path: changes/active/foundation-v2-docs-deepen/proposal.md
+    kind: pitch
+    purpose: "为什么做：补 docs/foundation/ 的实质内容"
+    read_after: [manifest.yaml]
+    owner: konglcxfs
+  - output: design.md
+    path: changes/active/foundation-v2-docs-deepen/design.md
+    kind: layout
+    purpose: "为什么先 foundation、5 份文件的边界"
+    read_after: [proposal.md]
+    owner: konglcxfs
+  - output: tasks.md
+    path: changes/active/foundation-v2-docs-deepen/tasks.md
+    kind: checklist
+    purpose: "5 份 docs + 2 个 Bamboo 状态更新的分步清单"
+    read_after: [manifest.yaml]
+    owner: konglcxfs
+  - output: decisions.md
+    path: changes/active/foundation-v2-docs-deepen/decisions.md
+    kind: adr
+    purpose: "2 条新 ADR：先 foundation + 单 commit"
+    read_after: [proposal.md, design.md]
+    owner: konglcxfs
+  - output: output-map.yaml
+    path: changes/active/foundation-v2-docs-deepen/output-map.yaml
+    kind: map
+    purpose: "本文件"
+    read_after: [manifest.yaml]
+    owner: konglcxfs
+
+# 主交付物（5 份 docs/foundation/ 新文件）：
+companion_outputs:
+  - path: docs/foundation/project-glossary.md
+    purpose: "30 个核心术语表"
+    approx_lines: 150
+  - path: docs/foundation/naming-conventions.md
+    purpose: "文件 / 包 / 变量 / DB 字段 4 类命名规则"
+    approx_lines: 120
+  - path: docs/foundation/principles.md
+    purpose: "8 条不可破坏的工程原则"
+    approx_lines: 80
+  - path: docs/foundation/stack-overview.md
+    purpose: "1 张表（11 行）+ 1 段叙述"
+    approx_lines: 100
+  - path: docs/foundation/versioning.md
+    purpose: "Semver 政策 + @xuexi/* 发布流程"
+    approx_lines: 90
+
+# Bamboo 状态更新：
+bamboo_updates:
+  - path: .bamboo/active.yaml
+    delta: "把 current 字段设为本 change 的 id"
+  - path: .bamboo/boards/foundation.yaml
+    delta: "在 changes: 列表追加本 change 的 phase=verify 行"
+  - path: .bamboo/index.yaml
+    delta: "在 changes: 列表追加本 change 的完整条目；刷新 generated_at"
+
+# Evidence 快照（在归档时刻一次性生成）：
+evidence_plan:
+  - path: changes/active/foundation-v2-docs-deepen/evidence/git-ls-files.txt
+    purpose: "5 份 docs/ 文件 + change 工件 + Bamboo 状态更新的 ls-files 快照"
+  - path: changes/active/foundation-v2-docs-deepen/evidence/wordcount.txt
+    purpose: "5 份 docs/ 文件的 wc -l/wc -w 输出"
+  - path: changes/active/foundation-v2-docs-deepen/evidence/tests.md
+    purpose: "自证：跨文件 grep 验证术语与代码命名一致"
+
+# 汇总
+total_files_in_change: 14    # 6 canonical + 5 docs + 3 evidence
+approx_loc_added: 800         # 5 份 docs 约 540 + 9 份 change/evidence 约 260

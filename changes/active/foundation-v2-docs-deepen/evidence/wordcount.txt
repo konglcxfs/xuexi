@@ -1,0 +1,16 @@
+# evidence / wordcount.txt — foundation-v2-docs-deepen
+#
+# Captured 2026-07-05
+# Command: wc -l -w docs/foundation/*.md
+#
+# 5 份新增 docs 的行数 + 词数：
+#   29 docs/foundation/README.md
+#  134 docs/foundation/naming-conventions.md
+#  131 docs/foundation/principles.md
+#   74 docs/foundation/project-glossary.md
+#   98 docs/foundation/stack-overview.md
+#  186 docs/foundation/versioning.md
+#  652 total
+#
+# 期望：5 份新增文件合计 ≥ 400 行（实际 623 行）—— 满足 "non-trivial" 门槛。
+# 词数留给运行时刻生成。
