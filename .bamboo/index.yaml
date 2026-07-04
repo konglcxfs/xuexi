@@ -27,22 +27,26 @@ changes:
     kind: foundation
     board: foundation
     workflow: full
-    status: active
-    phase: verify
+    status: archive
+    phase: archive
     title: "docs/foundation/ 第一次深补：术语表 / 命名约定 / 原则 / 技术栈 / 版本"
     owner: konglcxfs
     parent: foundation-hygiene
     created_at: 2026-07-05
     updated_at: 2026-07-05
+    archived_at: 2026-07-05
     canonical_outputs:
-      - changes/active/foundation-v2-docs-deepen/manifest.yaml
-      - changes/active/foundation-v2-docs-deepen/proposal.md
-      - changes/active/foundation-v2-docs-deepen/design.md
-      - changes/active/foundation-v2-docs-deepen/tasks.md
-      - changes/active/foundation-v2-docs-deepen/decisions.md
-      - changes/active/foundation-v2-docs-deepen/output-map.yaml
+      - changes/archive/foundation-v2-docs-deepen/manifest.yaml
+      - changes/archive/foundation-v2-docs-deepen/proposal.md
+      - changes/archive/foundation-v2-docs-deepen/design.md
+      - changes/archive/foundation-v2-docs-deepen/tasks.md
+      - changes/archive/foundation-v2-docs-deepen/decisions.md
+      - changes/archive/foundation-v2-docs-deepen/output-map.yaml
     evidence:
-      dir: changes/active/foundation-v2-docs-deepen/evidence
+      dir: changes/archive/foundation-v2-docs-deepen/evidence
+      attestation: changes/archive/foundation-v2-docs-deepen/evidence/tests.md
+      snapshot: changes/archive/foundation-v2-docs-deepen/evidence/git-ls-files.txt
+      wordcount: changes/archive/foundation-v2-docs-deepen/evidence/wordcount.txt
     depends_on: [foundation-hygiene]
     blocks: []
 runs: []

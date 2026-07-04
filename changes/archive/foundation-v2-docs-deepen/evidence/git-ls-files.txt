@@ -1,0 +1,33 @@
+# evidence / git-ls-files.txt — foundation-v2-docs-deepen
+# Captured at archive time, 2026-07-05
+# Command: git ls-files | grep -E '^(docs/foundation/|changes/archive/foundation-v2-docs-deepen/|\.bamboo/)'
+# Total entries in this snapshot: 17 (5 docs + 9 change/evidence + 3 bamboo state)
+#
+
+# === changes/archive/foundation-v2-docs-deepen/ ===
+changes/archive/foundation-v2-docs-deepen/decisions.md
+changes/archive/foundation-v2-docs-deepen/design.md
+changes/archive/foundation-v2-docs-deepen/evidence/git-ls-files.txt
+changes/archive/foundation-v2-docs-deepen/evidence/tests.md
+changes/archive/foundation-v2-docs-deepen/evidence/wordcount.txt
+changes/archive/foundation-v2-docs-deepen/manifest.yaml
+changes/archive/foundation-v2-docs-deepen/output-map.yaml
+changes/archive/foundation-v2-docs-deepen/proposal.md
+changes/archive/foundation-v2-docs-deepen/tasks.md
+
+# === docs/foundation/ (本 change 新增的 5 份) ===
+docs/foundation/README.md
+docs/foundation/naming-conventions.md
+docs/foundation/principles.md
+docs/foundation/project-glossary.md
+docs/foundation/stack-overview.md
+docs/foundation/versioning.md
+
+# === .bamboo/ (3 份状态修改) ===
+.bamboo/active.yaml
+.bamboo/boards/delivery.yaml
+.bamboo/boards/foundation.yaml
+.bamboo/boards/release.yaml
+.bamboo/config.yaml
+.bamboo/index.yaml
+.bamboo/project.yaml

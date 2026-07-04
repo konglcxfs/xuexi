@@ -24,18 +24,18 @@ changes:
       - changes/archive/foundation-hygiene/decisions.md
       - changes/archive/foundation-hygiene/output-map.yaml
   - id: foundation-v2-docs-deepen
-    phase: verify
+    phase: archive
     workflow: full
     target: [api, desktop, web, ai-adapter, knowledge-base, learning-engine, shared]
     updated_at: 2026-07-05
     parent: foundation-hygiene
     depends_on: [foundation-hygiene]
     canonical_outputs:
-      - changes/active/foundation-v2-docs-deepen/manifest.yaml
-      - changes/active/foundation-v2-docs-deepen/proposal.md
-      - changes/active/foundation-v2-docs-deepen/design.md
-      - changes/active/foundation-v2-docs-deepen/tasks.md
-      - changes/active/foundation-v2-docs-deepen/decisions.md
-      - changes/active/foundation-v2-docs-deepen/output-map.yaml
+      - changes/archive/foundation-v2-docs-deepen/manifest.yaml
+      - changes/archive/foundation-v2-docs-deepen/proposal.md
+      - changes/archive/foundation-v2-docs-deepen/design.md
+      - changes/archive/foundation-v2-docs-deepen/tasks.md
+      - changes/archive/foundation-v2-docs-deepen/decisions.md
+      - changes/archive/foundation-v2-docs-deepen/output-map.yaml
 counts:
   total: 2
